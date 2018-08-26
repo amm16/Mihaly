@@ -1,0 +1,4 @@
+input [type="password"],[type="email"],[type="text"]{
+	border: none;
+	border-bottom: thick;
+}

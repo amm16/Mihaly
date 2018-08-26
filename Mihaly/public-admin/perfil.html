@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Mihaly</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link href="https://fonts.googleapis.com/css?family=Sriracha" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shorcut icon" href="img/LogoCatCode2.png">
+  <link rel="stylesheet" href="css/font-awesome/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+</head>
+<body class="">
+    <nav class="navbar fixed-top navbar-dark bg-dark">
+        <div class="float-left">
+        <a href="archivos.html" style= "font-family: 'Sriracha', cursive;font-size:2em; color: white">Mihaly</a>
+        
+        <button class="btn btn-round btn-transparent" type="button" title="Atras">
+                <i style="color: rgba(226, 117, 189, .6); font-size: 1.6em;" class="fas fa-angle-left"></i>
+        </button>
+        <button class="btn btn-round btn-transparent" type="button" title="Adelante">
+                <i style="color: rgba(226, 117, 189, .6);font-size: 1.6em;" class="fas fa-angle-right"></i>
+        </button>
+        <label id="nombre-carpeta"> Home</label>
+      </div>
+        <div class="float-right" id="" >
+          <div class="dropdown dropdown dropleft">
+              <button class="btn btn-round btn-transparent" type="button" data-toggle="dropdown">
+                <i style="color: rgba(226, 117, 189, .6);" class="fas fa-user"></i>
+            </button>
+            <ul class="dropdown-menu">
+                <li><a href="perfil.html"><i class="fas fa-user"></i>  Perfil</a></li>
+                <div class="dropdown-divider"></div>
+                <li ><a id='cerrar-sesion' href=""><i class="fas fa-sign-out-alt"></i>  Cerrar Sesion</a></li> 
+             </ul>
+            </div>   
+        </div>   
+    </nav>
+    
+    <div class="flex-container" style="margin: 20px;">
+        <div class="profile-box flex-col">
+        <center><i class="fas fa-user-alt"></i></center>
+        </div>
+        <div class="flex-col">
+            <div style="padding: 20px;">
+                <form>
+                
+                    <label>Nombre de Usuario: </label><input id="usuario"type="text" placeholder=""><br>
+                    <label>Correo: </label><input type="email" id="correo" placeholder=""><br>
+                    <label>Tipo de cuenta: </label><br><input type="text" id="cuenta" disabled><br>
+                </form>
+            </div>
+            
+        </div>
+                   
+        
+    </div>
+                   
+        
+    
+
+        
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>4
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/controlador-archivos.js" ></script>
+</body>
+    

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Mihaly</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link href="https://fonts.googleapis.com/css?family=Sriracha" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shorcut icon" href="img/LogoCatCode2.png">
+  <link rel="stylesheet" href="css/font-awesome/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+</head>
+<body class="grey-background">
+<input type="hidden" id="plan-seleccionado">
+<nav class="navbar fixed-top navbar-dark bg-dark">
+        <div class="float-left">
+        <a href="archivos.html" style= "font-family: 'Sriracha', cursive;font-size:2em; color: white">Mihaly</a>
+        <label id="lb-nombre-archivo" text=""><label>
+        </div>
+        <center style="font-weight: 600;font-size:2.7em;font-family: 'Lato', sans-serif;">Planes</center>
+        <div class="float-right" id="" >
+          <div class="dropdown dropdown dropleft">
+              <button class="btn btn-round btn-transparent" type="button" data-toggle="dropdown">
+                <i style="color: rgba(226, 117, 189, .6);" class="fas fa-user"></i>
+            </button>
+            <ul class="dropdown-menu">
+                <li><a href="#modal-perfil" data-target="#modal-perfil" data-toggle="modal"><i class="fas fa-user"></i>  Perfil</a></li>
+                <div class="dropdown-divider"></div>
+                <li ><a id='cerrar-sesion' href=""><i class="fas fa-sign-out-alt"></i>  Cerrar Sesion</a></li> 
+             </ul>
+            </div>   
+        </div>   
+    </nav>
+
+    <div id="fondo-planes">
+            <div class="flex-container">                   
+                <div class="grey-squares flex-col"style="flex-direction: column;">
+                    <center><i style="font-size: 2.5em; "> Principiante </i></center>
+                    <br>
+                    <center><i style="font-size: 7em;"> $10 </i></center>
+                    <br>
+                    <button id="btn-principiante" class="btn-form" onclick="mostrarModalComprar();">Adquirir</button>
+                    <br>
+                        <ul>
+                            <li><i class="fas fa-circle"></i> 50 GB</li>
+                        </ul>
+                    </div>
+                <div class="grey-squares flex-col" style="flex-direction: column;">
+                    <center><i style="font-size: 3em;"> Experto </i></center>
+                    <br>
+                    <center><i style="font-size: 7em;"> $20 </i></center>
+                    <br>
+                    <button id="btn-experto" class="btn-form"onclick="mostrarModalComprar();">Adquirir</button>
+                    <br>
+                        <ul>
+                            <li><i class="fas fa-circle"></i> 150 GB</li>
+                        </ul>
+                </div>
+                    
+                </div>
+            <br>
+        </div>
+    <!-- Modal Perfil-->
+        <div class="modal fade" id="modal-perfil" role="dialog">
+          <div class="modal-dialog modal-dialog-centered modal-sm">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+              </div>
+              <div class="modal-body">
+                <div class="profile-box flex-col">
+              <center><i class="fas fa-user-alt"></i></center>
+            </div>
+                <div id="input-modal-perfil">
+                  <div name="form-registro">
+          <h3><center>Perfil</center></h3>
+            <div>
+                <input type="text" name='usuario'class="form-control" onkeyup="validarUsuario(this);" placeholder="Usuario" id="txt-usuario">
+                <div class="invalid-feedback">Este campo es obligatorio</div>
+            </div>
+            <br>
+            <div>
+             <input type="text" name='correo' class="form-control"placeholder="Email"id="txt-correo" onkeyup="validarCorreo(this);">
+                
+                <div class="valid-feedback"></div>
+                <div id="res-correo" class="invalid-feedback">Este campo es obligatorio</div>   
+            </div>
+            <br>
+            <div>
+              <input type="password" name='clave'class="form-control" placeholder="Contraseña" id="txt-clave1"><br>
+                <div id="res-clave1"class="invalid-feedback" >Este campo es obligatorio</div>  
+            </div>
+            <div>
+                <input type="password" class="form-control" placeholder="Confirmar Contraseña"id="txt-clave2" onkeyup="comprobarClave(this);" ><br>
+                <div id="res-clave2"class="invalid-feedback">Este campo es obligatorio</div>
+            </div>
+            <input type="text" name='plan' class="form-control"id="txt-plan" disabled>  
+            </div>
+        </div> 
+              </div>
+              <div class="modal-footer">
+                <button id ='btn-editar-perfil';type="button" class="btn btn-form" data-dismiss="modal">Editar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+ <!-- Modal Comprar-->
+        <div class="modal fade" id="modal-comprar" role="dialog">
+          <div class="modal-dialog modal-dialog-centered modal-sm">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+              </div>
+              <div class="modal-body">
+                <div id="input-modal-comprar">
+                  <div name="form-registro">
+          <h3><center>Pagar con:</center></h3>
+            <div>
+                <input type="text" name=''class="form-control" onkeyup="validarCampoVacio(this.id);" placeholder="Tarjetahabiente" id="txt-tarjeta-habiente">
+                <div class="invalid-feedback">Este campo es obligatorio</div>
+            </div>
+            <div>
+                <input type="text" name=''class="form-control" onkeyup="validarCampoVacio(this.id);" placeholder="No. de Tarjeta" id="txt-no-tarjeta">
+                <div class="invalid-feedback">Este campo es obligatorio</div>
+            </div>
+            <div>
+                <input type="text" name=''class="form-control" onkeyup="validarCampoVacio(this.id);" placeholder="Fecha de Vencimiento" id="txt-fecha_vencimiento">
+                <div class="invalid-feedback">Este campo es obligatorio</div>
+            </div>
+            <div>
+                <input type="text" name=''class="form-control" onkeyup="validarCampoVacio(this.id);" placeholder="Codigo de Seguridad" id="txt-codigo-seguridad">
+                <div class="invalid-feedback">Este campo es obligatorio</div>
+            </div>
+            </div>
+        </div> 
+              </div>
+              <div class="modal-footer">
+                <button id ='btn-comprar';type="button" class="btn btn-form" data-dismiss="modal">Comprar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+<!-- Modal Comprobando-->
+        <div class="modal fade" id="modal-comprobando" role="dialog">
+          <div class="modal-dialog modal-dialog-centered modal-sm">
+            <div class="modal-content" style=" background-color: #333333;">
+              <div class="modal-header">
+              </div>
+              <div class="modal-body">
+                <div id="input-modal-comprobando">
+                <center>Comprobando Pago</center>
+                <center><img src="img/loading.gif"></center>
+                </div> 
+              </div>
+              <div class="modal-footer">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+   <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/controlador-seguridad.js" ></script>
+    <script src="js/controlador-planes.js" ></script>
+    <script src="js/controlador-perfil.js" ></script>
+  </body>
+    

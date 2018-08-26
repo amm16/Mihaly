@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<head>
+	<title>Mihaly</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link href="https://fonts.googleapis.com/css?family=Sriracha" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shorcut icon" href="img/LogoCatCode2.png">
+	
+</head>
+
+<body class="background-body" >
+<div id="alert"class="alert alert-dark" 
+	style="display:none;background-color: rgb(136, 59, 109);
+    		color: #FFF;
+    		font-size: 1em;"
+    role="alert">
+  			Credenciales Incorrectas
+	</div>
+	<div class="container-center">
+		<div id="login">
+			<img src="img/LogoCatCode1.png" alt="Mihaly Logo" class="center">
+			<center><h1 style= "font-family: 'Sriracha', cursive;font-size:4.5em;">Mihaly</h1></center>
+			<div>
+				<div style="margin-top: 20px;">
+             		<input type="text" name='correo' class="form-control"placeholder="Email" id="txt-correo" onkeyup="validarCorreo(this);">
+             		<div class="valid-feedback"></div>
+             		<div id="res-correo" class="invalid-feedback">Este campo es obligatorio</div>   
+            	</div>
+            	<br>
+            	<div>
+              		<input id="txt-clave" type="password" name='clave'class="form-control" onkeyup="validarCampoVacio('txt-clave');"placeholder="Contraseña" ><br>
+                	<div id="res-clave"class="invalid-feedback" >Este campo es obligatorio</div>  
+            	</div>
+				<button class="btn-form" id="btn-login"><a href="#">Iniciar Sesión</a></button>
+				<br>
+				<br>
+				¿Nuevo en Mihaly?<a href="registro.html"> Regístrate ahora</a>	
+			</div>	
+		</div>
+	</div>
+	
+	<script src="js/jquery.min.js"></script>
+	<script src="js/controlador-login.js" ></script>
+	<script src="https://apis.google.com/js/platform.js" async defer></script>
+
+</body>

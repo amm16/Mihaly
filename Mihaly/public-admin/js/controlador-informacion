@@ -1,0 +1,16 @@
+function llenarTabla(){
+	$.ajax({
+		url:"/obtener-perfil",
+		method:"POST",
+		data: parametros,
+		dataType:"json",
+		success:function(respuesta){
+			console.log(respuesta);
+			console.log(respuesta.usuario);
+			$('#txt-usuario').val(respuesta.usuario);
+			$('#txt-correo').val(respuesta.correo);
+			$('#txt-plan').val(respuesta.nombre_plan);
+
+		}
+	});
+}

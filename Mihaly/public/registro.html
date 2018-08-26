@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<head>
+	<title>Mihaly</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link href="https://fonts.googleapis.com/css?family=Sriracha" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shorcut icon" href="img/LogoCatCode2.png">
+</head>
+<body class="flex-container-r">
+    <div id="registro-info" class=" d-none d-sm-block col-lg-8 col-xl-8 col-md-6 col-sm-4">
+    	<br>
+        <center><img src="img/LogoCatCode3.png" alt="Mihaly Logo"></center>
+    </div>
+    <div id="registro-formulario" class ="col-lg-4 col-xl-4 col-md-6 col-sm-8 col-12" >
+    	<center><h1 style= "font-family: 'Sriracha', cursive;font-size:5em;">Mihaly</h1></center>
+        <div name="form-registro">
+        	<h3>Crea una Cuenta</h3>
+            <div>
+                <input type="text" name='usuario'class="form-control" onkeyup="validarUsuario(this);" placeholder="Usuario" id="txt-usuario">
+                <div class="invalid-feedback">Este campo es obligatorio</div>
+            </div>
+            <br>
+            <div>
+             <input type="text" name='correo' class="form-control"placeholder="Email"id="txt-correo" onkeyup="validarCorreo(this);">
+                
+                <div class="valid-feedback"></div>
+                <div id="res-correo" class="invalid-feedback">Este campo es obligatorio</div>   
+            </div>
+            <br>
+            <div>
+              <input type="password" name='clave'class="form-control" placeholder="Contraseña Nueva" id="txt-clave1"><br>
+                <div id="res-clave1"class="invalid-feedback" >Este campo es obligatorio</div>  
+            </div>
+            <div>
+                <input type="password" class="form-control" placeholder="Confirmar Contraseña"id="txt-clave2" onkeyup="comprobarClave(this);" ><br>
+                <div id="res-clave2"class="invalid-feedback">Este campo es obligatorio</div>
+            </div>
+            
+            <button class="btn-form" id="btn-registro">
+                Crear Cuenta
+            </button><br>
+            ¿Ya tienes una cuenta?<a href="login.html"> Inicia Sesión</a> 
+            <hr>
+        </div> 
+    </div>
+</div>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/controlador-registro.js" ></script>
+</body>
+</html>
